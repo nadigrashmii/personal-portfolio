@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- <link rel="stylesheet" href="stylesheets.css"> -->
+     <style>
+        * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 18px;
+        line-height: 1.5;
+        text-decoration: none;
+        margin: none;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #d0f4de;
+            color: black;
+            padding: 10px 20px;
+            border-width: 2px;
+            position:fixed;
+            width: 97.5%;
+        }
+        
+        header .logo {
+            font-size: 15px;
+        }
+        
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        
+        header nav ul li a {
+            color: black;
+            text-decoration: none;
+        }
+        
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        #about-section h1 {
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            font-size: 2.75rem;
+            font-weight: 700;
+            height: fit-content;
+            text-align: center;
+        }
+
+        #about-section{
+            text-align: center;
+            align-items: center;
+            overflow: hidden;
+            padding-right: 50px;
+            padding-left: 50px;
+            box-sizing: border-box;
+        }
+
+        #about-section .bio{
+            text-align: center;
+            padding-left: 300px;
+            padding-right: 300px;
+        }
+
+        #about-section .headshot img{
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top: 1rem;
+            margin-bottom: 37px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            
+        } 
+
+        #social-links{
+            text-align: center;
+            align-items: center;
+        }
+        .social-links img {
+            width: 3.5%;
+        }
+
+        #education h2{
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            height: fit-content;
+            text-align: center;
+            background: #d0f4de;
+            color: black;
+            padding: 10px 20px;
+            border-width: 2px;
+        }
+
+        #education ul{
+            list-style: none;
+            padding: 0;
+            display:flex;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        #education ul li{
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #skills h2{
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            height: fit-content;
+            text-align: center;
+            background: #d0f4de;
+            color: black;
+            padding: 10px 20px;
+            border-width: 2px;
+        }
+
+        #skills ul{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            margin-right: 37px;
+            margin-left: 37px;
+        }
+
+        #skills ul li{
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #certifications h2{
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            height: fit-content;
+            text-align: center;
+            background: #d0f4de;
+            color: black;
+            padding: 10px 20px;
+            border-width: 2px;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            margin: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        .certifications-subsection img {
+            width:300px;
+            border-radius: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .certifications-subsection h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .certifications-subsection h5 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .certifications-subsection {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem;
+            width: 100%;
+            max-width: 1600px;
+            overflow-x: auto; 
+        }
+
+        .certifications-subsection {
+            flex: 0 0 16rem;
+        }
+
+        .certifications-subsection section{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #projects h2{
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            height: fit-content;
+            text-align: center;
+            background: #d0f4de;
+            color: black;
+            padding: 10px 20px;
+            border-width: 2px;
+        }
+
+        .projects-subsection img {
+            width:300px;
+            border-radius: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .projects-subsection section{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            margin-right: 37px;
+            margin-left: 37px;
+        }
+
+        #extracurricular h2{
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            height: fit-content;
+            text-align: center;
+            background: #d0f4de;
+            color: black;
+            padding: 10px 20px;
+            border-width: 2px;
+        }
+
+        #extracurricular ul{
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            margin-right: 37px;
+            margin-left: 37px;
+        }
+
+        #extracurricular ul li{
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #contact h2{
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            height: fit-content;
+            text-align: center;
+            background: #d0f4de;
+            color: black;
+            padding: 10px 20px;
+            border-width: 2px;
+        }
+
+        #contact form{
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #d0f4de;
+            color: black;
+        }
+        
+        footer a {
+            color: #d0f4de;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+     </style> 
+    
+</head>
+    <body>
+        <header>
+            <div class="logo"><h1>Rashmi Nadig</h1></div>
+            <nav>
+              <ul>
+                <li><a href="/index.html"><h1>Home</h1></a></li>
+                <li><a href="#education"><h1>Education</h1></a></li>
+                <li><a href="#skills"><h1>Skills</h1></a></li>
+                <li><a href="#certifications"><h1>Certifications</h1></a></li>
+                <li><a href="#projects"><h1>Projects</h1></a></li>
+                <li><a href="#extracurricular"><h1>Extracurricular</h1></a></li>
+                <li><a href="/Contactme.html"><h1>Contact Me</h1></a></li>
+              </ul>
+            </nav>
+          </header>
+<br><br>
+        <section id="about-section" >
+                <h1>Hey World, I'm Rashmi!</h1>
+            <div class="headshot">
+                <picture>
+                    <img src="Profile.jpg" alt="headshot">
+                </picture>
+            </div>
+
+            <div class="bio">
+        
+                <p>
+                    Hey there! I'm a second-year Information Science engineering student who's passionate about learning, tackling challenges, and creating innovative solutions. I'm all about UI/UX design, critical thinking, and working with others to bring ideas to life.<br>
+
+                    Right now, I'm on the lookout for exciting internship opportunities to put my skills to use, dive into meaningful projects, and grow both professionally and personally.<br>
+
+                    When I'm not geeking out over tech, you'll probably find me painting, designing posters, creating invitations, or whipping up cool social media posts!
+                </p>
+            </div>
+            <br>
+            
+            <div class="social-links">
+                <a href="https://github.com/nadigrashmii" target="_blank">
+                    <!-- <i class="fa-brands fa-github"> -->
+                    <img src="/github.png" alt="Github"></i>
+                </a>
+                    
+                <a href="https://www.linkedin.com/in/rashmi-nadig-650596250/" target="_blank">
+                    <!-- <i class="fa-brands fa-linkedin"> -->
+                    <img src="/linkedin.png" alt="LinkedIn"></i>
+                </a>     
+            </div> 
+        </section><br>
+         
+        <hr>
+        <div class="education"></div>
+        <section id="education" class="education">
+            <div class="education-container">
+                <h2>Education</h2>
+                <ul>
+                    <li>
+                        <b>B.Tech in Information Science & Engineering</b><br>Jain Deemed-to-be University | Expected Graduation: 2027
+                    </li>
+                    <li>
+                        <b>Pre-University</b><br>Sadhana PU College
+                    </li>
+                    <li>
+                        <b>High School</b><br>RNS International School
+                  </li>
+                </ul>
+            </div>
+        </section>
+        
+        <hr>
+        <div class="skills"></div>
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Knowledge of <b>HTML and CSS</b></li>
+                <!-- <li><b>CSS</b></li> -->
+                <li><b>UI/UX Design & Research:</b> <br>Skilled in conceptualizing user-centered designs and conducting research to enhance user experiences.</li>
+                <li><b>Communication & Leadership:</b> <br>Ability to lead teams and organize events</li>
+                <li><b>Analytical Thinking:</b> <br>Proficient in solving complex problems and innovating creative solutions.</li>
+                <li><b>Technical Adaptability:</b> <br>Quickly learning and applying new tools, technologies, and frameworks.</li>
+            </ul>
+            </section>
+        
+        <hr>
+        <div class="certifications"></div>
+        <section id="certifications" class="certifications">
+            <h2>Certifications </h2>
+            <div class="certifications-subsection">
+                    <section>
+                        <picture>
+                            <img src="SQL Fundamentals.png" alt="SQL Fundamentals">
+                            <li><b>SQL Fundamentals:</b> <br>University of Colorado Boulder, Coursera</li>
+                        </picture>
+                    </section>
+
+                        <section>
+                            <picture>
+                                <img src="Introducation to cloud computing.png" alt="Introduction to Cloud Computing">
+                                <li><b>Introduction to Cloud Computing:</b> <br>IBM (Coursera)</li>
+                            </picture>
+                        </section>
+
+                    <section>
+                        <picture>
+                            <img src="Introduction to HTML.png" alt="Introduction to HTML">
+                            <li><b>Introduction to HTML:</b> <br>Coursera Project Network</li>
+                        </picture>
+                    </section>
+
+                    <section>   
+                        <picture>
+                            <img src="Linux Commands & Shell Scripting.png" alt="Linux Commands & Shell Scripting">
+                            <li><b>Linux Commands & Shell Scripting:</b> <br>IBM, Coursera</li>
+                        </picture>
+                    </section> 
+
+                    <section>
+                        <picture>
+                            <img src="Graph Theory.png" alt="Graph Theory">
+                            <li><b>Graph Theory:</b> <br>University of California San Diego, Coursera</li>
+                        </picture>
+                    </section>
+                        
+                    <section> 
+                        <picture>
+                            <img src="Agile Development.png" alt="Agile Development & Scrum">
+                            <li><b>Agile Development & Scrum:</b> <br>IBM, Coursera</li>
+                        </picture>
+                    </section>
+
+                    <section>    
+                        <picture>
+                            <img src="UNESCO.png" alt="UNESCO MGIEP">
+                            <li><b>Self Directed Emotional Learning for Empathy and Kindness (SEEK):</b> <br>UNESCO MGIEP</li>
+                        </picture>
+                    </section>
+
+                    <section>    
+                        <picture>
+                            <img src="Database.png" alt="Database and Transaction Management">
+                            <li><b>Database and Transaction Management:</b> <br>IBM SkillBuild</li>
+                        </picture>
+                    </section>
+
+                    <section>    
+                        <picture>
+                            <img src="Cloud computing.png" alt="Introduction to Cloud Computing">
+                            <li><b>Introduction to Cloud Computing:</b> <br>IBM SkillBuild</li>
+                        </picture>
+                    </section>
+
+                    <section>
+                        <picture>
+                            <img src="Learn Git.png" alt="Learn Git">
+                            <li><b>Learn Git | Codecademy:</b> <br>IBM SkillBuild</li>
+                        </picture>
+                    </section>
+            </div>
+        </section>
+
+        <hr>
+        <div class="projects"></div>
+        <section id="projects" class="projects">
+            <h2>Project</h2>
+            <div class="projects-subsection">
+                    <section>
+                        <picture>
+                            <img src="Closetcuelogo.png" alt="ClosetCue">
+                            <li><b>SQL Fundamentals:</b> <br>I and my team from college have been working on a project. This is still an ongoing project.Developing a website, <i>ClosetCue</i>, integrating AI for personalized fashion advice with features like <i>color analysis, weather adaptability, and occasion-specific recommendations.</i>
+                            Finalized branding and foundational research; currently pursuing HTML development via Coursera to build a responsive platform.</li>
+                        </picture>
+                    </section>
+            </div>
+        </section>
+
+        <hr>
+        <div class="extracurricular"></div>
+        <section id="extracurricular" class="extracurricular">
+            <h2>Extracurriculars</h2>
+            <ul>
+                <li><b>Joint Secretary</b> <br>Infosphere Club: Coordinated initiatives and fostered member engagement.</li>
+                <li><b>Design Team Member</b> <br>Infosphere Club: Contributed to the creative development of club projects and events.</li>
+                <li><b>Volunteer</b> <br>Organized and designed for UX Blitz, a UI/UX-focused event by Infosphere Club.</li>
+            </ul>
+            </section>
+
+            <hr>
+            <div class="contact"></div>
+            <section id="contact" class="contact">
+            <h2>To contact me fill this form</h2>
+                <form action="/action.php">
+                    <input type="text" placeholder="Your name">
+                    <br><br>
+                    <input type="text" placeholder="Email-id">
+                    <br><br>
+                    <input type="text" placeholder="Organisation Name">
+                    <br><br>
+                    <input type="number" placeholder="Contact Number">
+                    <br><br>
+
+                    <h5>Select your designation</h5>
+                    <select name="city" id="city">
+                        <option value="Select">Select</option>
+                        <option value="Student">Student</option>
+                        <option value="Recruiter">Recruiter</option>
+                        <option value="General">General</option>
+                    </select><br><br>
+
+                    <h5>Select your age group</h5>
+                    <label for="15-18">
+                        <input type="checkbox" value="15-18" name="age" id="101">15-18
+                    </label>
+                
+                    <label for="18-21">
+                        <input type="checkbox" value="18-21" name="subject" id="102">18-21
+                    </label>
+                    
+                    <label for="22+">
+                        <input type="checkbox" value="22+" name="subject" id="103">22+
+                    </label><br><br>
+
+                    <input type="submit" value="Submit">
+                </form>
+        </section>
+
+            <footer>
+                <p>&copy; 2025 Rashmi Nadig's Portfolio. All rights reserved.</p>
+                <p>Privacy Policy | Terms of Service</p>
+              </footer>
+
+    </body>
+</html>
